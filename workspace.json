@@ -1,4 +1,9 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "login-page": "apps/login-page",
+    "login-page-e2e": "apps/login-page-e2e",
+    "ui-components": "libs/ui-components",
+    "ui-components-e2e": "apps/ui-components-e2e"
+  }
 }

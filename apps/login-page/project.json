@@ -1,0 +1,73 @@
+{
+  "root": "apps/login-page",
+  "sourceRoot": "apps/login-page/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/login-page",
+        "index": "apps/login-page/src/index.html",
+        "baseHref": "/",
+        "main": "apps/login-page/src/main.tsx",
+        "polyfills": "apps/login-page/src/polyfills.ts",
+        "tsConfig": "apps/login-page/tsconfig.app.json",
+        "assets": [
+          "apps/login-page/src/favicon.ico",
+          "apps/login-page/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/login-page/src/environments/environment.ts",
+              "with": "apps/login-page/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "login-page:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "login-page:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/login-page/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/login-page"],
+      "options": {
+        "jestConfig": "apps/login-page/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
