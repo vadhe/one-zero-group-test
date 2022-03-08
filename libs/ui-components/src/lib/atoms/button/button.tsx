@@ -1,12 +1,13 @@
-import { HtmlHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 
 /* eslint-disable-next-line */
 export interface IStyledButton {
   variant: 'primary' | 'secondary';
 }
+
 export interface ButtonProps
-  extends HtmlHTMLAttributes<HTMLButtonElement>,
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
     IStyledButton {
   children?: React.ReactChild;
   icon?: React.ReactNode;
@@ -15,6 +16,7 @@ export interface ButtonProps
 const StyledButton = styled.button<IStyledButton>`
   color: white;
   display: flex;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
   border: 1px;
