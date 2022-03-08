@@ -9,7 +9,7 @@ const StyledIntro = styled.div`
   width: 100%;
   text-align: center;
   p {
-    width: 70%;
+    width: 50%;
     margin: 1rem auto;
   }
 `;
